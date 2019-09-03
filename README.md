@@ -8,7 +8,7 @@ Starter code
   * Activations
   * Nodes per layer
   * etc
-* Using [SHERPA]()
+* Using [SHERPA](https://parameter-sherpa.readthedocs.io/en/latest/)
 
 ### GPU Load Balancing
 * Run `max_concurrent` number of processes
