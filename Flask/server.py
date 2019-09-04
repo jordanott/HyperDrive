@@ -17,7 +17,7 @@ file_name = '../VisaModel/TFRecord/data/supertable20190405_ca_2018-06-03_2018-09
 
 app = Flask(__name__, template_folder="templates/")
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-GoogleMaps(app, key="AIzaSyASmk5SoN0GIY4Azl2Ec5qUgiLrrJ1siG0")
+GoogleMaps(app, key="")
 
 def convert(element, type):
     if element == '': return ''
