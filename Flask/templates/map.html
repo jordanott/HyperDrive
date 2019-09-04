@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+            {{mymap.js}}
+    </head>
+    <body>
+        <center>
+
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{message}}
+                </div>
+            {% endfor %}
+            <h1>SHARE Restaurant Recommendations</h1>
+
+
+            <form method="POST" action="/background_process_test">
+                <input type="text" name="card_number" placeholder="Card Number" value={{card_number}}>
+                <input type="text" name="postal_code" placeholder="Postal Code" value={{postal_code}}>
+                <input type="date" name="date" min="05/01/2018" max="12/31/2018" value={{date}}>
+                <input type="time" name="time" min="9:00" max="18:00" value={{time}}>
+                <input type="submit" value="Submit">
+            </form><br>
+
+            {{mymap.html}}
+            {% if postal_codes_plot_url %}
+                <div class="row">
+                    <img src={{ postal_codes_plot_url }} alt="my plot">
+                    <img src={{ merchant_count_plot_url }} alt="my plot">
+                </div>
+            {% endif %}
+
+        </center>
+
+    </body>
+
+
+</html>
